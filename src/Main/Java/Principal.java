@@ -1,5 +1,6 @@
 package Main.Java;
 
+import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.enums.Alternativa;
 import br.com.alura.screenmatch.enums.Ativa;
 import br.com.alura.screenmatch.model.Filme;
@@ -24,6 +25,24 @@ public class Principal {
         gog.pegaMedia();
 
         System.out.println();
+
+
+        Filme milesMorales = new Filme();
+        milesMorales.setTipo("Filme");
+        milesMorales.setNome("Spider-Man: Across Spider Verse");
+        milesMorales.setAnoLancamento(2023);
+        milesMorales.setIncuidoNoPlano(Alternativa.SIM);
+        milesMorales.setDuracaoMinutos(136);
+        milesMorales.setDiretor("Joaquim Dos Santos, Justin K. Thompson, Kemp Powers");
+
+        milesMorales.exibeFichaTecnica();
+        milesMorales.avalia(10);
+        milesMorales.avalia(10);
+        milesMorales.avalia(9.9);
+        milesMorales.pegaMedia();
+
+        System.out.println();
+
 
         Serie arcane = new Serie();
         arcane.setTipo("Série");
@@ -60,7 +79,11 @@ public class Principal {
         house.avalia(9.5);
         house.pegaMedia();
 
+        CalculadoraDeTempo calc = new CalculadoraDeTempo();
 
+        calc.inclui(gog);
+        calc.inclui(milesMorales);
+        System.out.println(calc.getTempoTotal());
 
     }
 
