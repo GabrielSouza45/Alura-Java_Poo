@@ -1,8 +1,10 @@
 package Main.Java;
 
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.enums.Alternativa;
 import br.com.alura.screenmatch.enums.Ativa;
+import br.com.alura.screenmatch.model.Episodio;
 import br.com.alura.screenmatch.model.Filme;
 import br.com.alura.screenmatch.model.Serie;
 import br.com.alura.screenmatch.model.Titulo;
@@ -25,7 +27,6 @@ public class Principal {
         gog.pegaMedia();
 
         System.out.println();
-
 
         Filme milesMorales = new Filme();
         milesMorales.setTipo("Filme");
@@ -83,8 +84,22 @@ public class Principal {
 
         calc.inclui(gog);
         calc.inclui(milesMorales);
+        calc.inclui(arcane);
         System.out.println(calc.getTempoTotal());
 
+
+        FiltroRecomendacao filtroRecomendacao = new FiltroRecomendacao();
+        filtroRecomendacao.filtra(milesMorales);
+
+        Episodio episodio = new Episodio();
+        episodio.setNome("pilot");
+        episodio.setNumero(1);
+        episodio.setTotalVizualizacoes(400);
+        episodio.setSerie(house);
+
+        filtroRecomendacao.filtra(episodio);
+
     }
+
 
 }

@@ -30,8 +30,10 @@ public class Titulo {
         this.totalAvaliacoes++;
     }
 
-    public void pegaMedia(){
-        System.out.println("Avaliação: " + this.somaAvaliacoes / this.totalAvaliacoes);
+    public double pegaMedia(){
+        double avalia = this.somaAvaliacoes / this.totalAvaliacoes;
+        System.out.println("Avaliação: " + avalia);
+        return avalia;
     }
 
 
