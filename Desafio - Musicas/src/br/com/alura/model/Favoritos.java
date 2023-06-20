@@ -13,7 +13,7 @@ public class Favoritos{
         Scanner sc = new Scanner(System.in);
 
         if (this.favorito.contains(audio)){
-            System.out.println("Esta música já existe na playlist, deseja adicionar novamente? 'S' ou 'N'");
+            System.out.println("Esta música '"+ audio.getTitulo() + "' já existe na playlist, deseja adicionar novamente? 'S' ou 'N'");
             String escolha = sc.nextLine();
             if (escolha.equals("S")){
                 this.favorito.add(audio);

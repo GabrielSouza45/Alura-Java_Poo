@@ -107,9 +107,23 @@ public class Main {
         //exibir favoritos lista
         lista.exibirPlaylist();
         pularLinha();
+
+        //Adicionar musica repetida
+        Favoritos repete = new Favoritos();
+        repete.setNomePlaylist("As melhores");
+        repete.adicionar(musica);
+        repete.adicionar(musica);
+        repete.adicionar(musica);
+        repete.adicionar(musica2);
+        pularLinha();
+
+        //exibir favoritos repetidos
+        repete.exibirPlaylist();
+        pularLinha();
     }
 
     public static void pularLinha(){
         System.out.println();
     }
+
 }

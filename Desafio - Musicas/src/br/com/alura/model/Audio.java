@@ -1,12 +1,14 @@
 package br.com.alura.model;
 
-public class Audio {
+import br.com.alura.interfaces.Classificacoes;
 
+public class Audio {
+    Avaliacao avaliacao = new Avaliacao();
     private String titulo;
     private int totalReproducoes;
     private int curtidas;
-    private double classificacao;
-    private int totalClassificacoes;
+    private int classificacao;
+    private String totalClassificacoes = avaliacao.inclui(this);
 
     public Audio(){
 
@@ -19,10 +21,11 @@ public class Audio {
         this.totalReproducoes ++;
     }
     public void exibirFichaTecnica(){
+
         System.out.println("Título: " + this.titulo);
         System.out.println("Reproduções: " + this.totalReproducoes);
         System.out.println("Curtidas: " + this.curtidas);
-        System.out.println("Classificação: " + this.classificacao);
+        System.out.println("Classificação: " + this.totalClassificacoes);
     }
 
 
@@ -42,7 +45,7 @@ public class Audio {
         return curtidas;
     }
 
-    public double getClassificacao() {
+    public int getClassificacao() {
         return classificacao;
     }
 

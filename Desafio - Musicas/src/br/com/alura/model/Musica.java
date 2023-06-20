@@ -1,6 +1,8 @@
 package br.com.alura.model;
 
-public class Musica extends Audio{
+import br.com.alura.interfaces.Classificacoes;
+
+public class Musica extends Audio implements Classificacoes {
 
     private String album;
     private String cantor;
@@ -16,6 +18,18 @@ public class Musica extends Audio{
         System.out.println("Album: " + this.album);
         System.out.println("Gênero: " + this.genero);
     }
+
+    @Override
+    public int getClassificacao() {
+        if ((this.getCurtidas() * this.getTotalReproducoes()) / 2 > 8){
+            return 10;
+        }else if ((this.getCurtidas() * this.getTotalReproducoes()) / 2 > 5){
+            return 5;
+        }else {
+            return 3;
+        }
+    }
+
 
     public String getAlbum() {
         return album;
