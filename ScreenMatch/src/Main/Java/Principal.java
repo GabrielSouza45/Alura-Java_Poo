@@ -9,6 +9,9 @@ import br.com.alura.screenmatch.model.Filme;
 import br.com.alura.screenmatch.model.Serie;
 import br.com.alura.screenmatch.model.Titulo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Principal {
     public static void main(String[] args) {
 
@@ -44,6 +47,21 @@ public class Principal {
 
         System.out.println();
 
+        Filme spaceChimps = new Filme();
+        spaceChimps.setTipo("Filme");
+        spaceChimps.setNome("Space Chimps - Micos no Espaço");
+        spaceChimps.setAnoLancamento(2008);
+        spaceChimps.setIncuidoNoPlano(Alternativa.SIM);
+        spaceChimps.setDuracaoMinutos(81);
+        spaceChimps.setDiretor("Kirk DeMicco");
+
+        spaceChimps.exibeFichaTecnica();
+        spaceChimps.avalia(10);
+        spaceChimps.avalia(7.9);
+        spaceChimps.avalia(8.5);
+        spaceChimps.pegaMedia();
+
+        System.out.println();
 
         Serie arcane = new Serie();
         arcane.setTipo("Série");
@@ -98,6 +116,15 @@ public class Principal {
         episodio.setSerie(house);
 
         filtroRecomendacao.filtra(episodio);
+
+        System.out.println();
+
+        List<Filme> listaFilmes = new ArrayList<>();
+        listaFilmes.add(gog);
+        listaFilmes.add(milesMorales);
+        listaFilmes.add(spaceChimps);
+        System.out.println("Tamanho da lista: " + listaFilmes.size());
+        System.out.println("Primeiro filme: " + listaFilmes.get(0).getNome());
 
     }
 
