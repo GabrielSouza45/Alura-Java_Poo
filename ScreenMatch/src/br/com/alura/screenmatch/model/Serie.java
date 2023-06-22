@@ -9,8 +9,8 @@ public class Serie extends Titulo{
     private Ativa ativa;
     private int duracaoPorEpisodio;
 
-    public Serie(){
-
+    public Serie(String nome, int anoLancamento){
+        super("Série", nome, anoLancamento);
     }
 
     @Override
@@ -18,7 +18,7 @@ public class Serie extends Titulo{
         super.exibeFichaTecnica();
         System.out.println("Temporadas: " + this.temporadas);
         System.out.println("Episodios por temporada: " + this.episodiosPorTemporada);
-        System.out.println("Status: " + this.ativa.name());
+        System.out.println("Status: " + this.ativa);
         System.out.println("Duração média por episodio: " + getDuracaoMinutos());
     }
 

@@ -6,6 +6,11 @@ public class Filme extends Titulo implements Classificavel {
 
     private String diretor;
 
+    public Filme(String nome, int anoLancamento) {
+        super("Filme", nome, anoLancamento);
+        this.setTipo("Filme");
+    }
+
     @Override
     public void exibeFichaTecnica() {
         super.exibeFichaTecnica();
@@ -24,4 +29,5 @@ public class Filme extends Titulo implements Classificavel {
     public int getClassificacao() {
         return (int) pegaMedia() / 2;
     }
+
 }

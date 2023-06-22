@@ -10,15 +10,13 @@ import br.com.alura.screenmatch.model.Serie;
 import br.com.alura.screenmatch.model.Titulo;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Principal {
     public static void main(String[] args) {
 
-        Filme gog = new Filme();
-        gog.setTipo("Filme");
-        gog.setNome("Guardiões da Galáxia Vol.3");
-        gog.setAnoLancamento(2023);
+        Filme gog = new Filme("Guardiões da Galáxia Vol.3", 2023);
         gog.setIncuidoNoPlano(Alternativa.SIM);
         gog.setDuracaoMinutos(149);
         gog.setDiretor("James Gunn");
@@ -31,10 +29,7 @@ public class Principal {
 
         System.out.println();
 
-        Filme milesMorales = new Filme();
-        milesMorales.setTipo("Filme");
-        milesMorales.setNome("Spider-Man: Across Spider Verse");
-        milesMorales.setAnoLancamento(2023);
+        Filme milesMorales = new Filme("Spider-Man: Across the Spider Verse", 2023);
         milesMorales.setIncuidoNoPlano(Alternativa.SIM);
         milesMorales.setDuracaoMinutos(136);
         milesMorales.setDiretor("Joaquim Dos Santos, Justin K. Thompson, Kemp Powers");
@@ -47,10 +42,7 @@ public class Principal {
 
         System.out.println();
 
-        Filme spaceChimps = new Filme();
-        spaceChimps.setTipo("Filme");
-        spaceChimps.setNome("Space Chimps - Micos no Espaço");
-        spaceChimps.setAnoLancamento(2008);
+        Filme spaceChimps = new Filme("Space Chimps - Micos no Espaço", 2008);
         spaceChimps.setIncuidoNoPlano(Alternativa.SIM);
         spaceChimps.setDuracaoMinutos(81);
         spaceChimps.setDiretor("Kirk DeMicco");
@@ -63,10 +55,7 @@ public class Principal {
 
         System.out.println();
 
-        Serie arcane = new Serie();
-        arcane.setTipo("Série");
-        arcane.setNome("Arcane");
-        arcane.setAnoLancamento(2021);
+        Serie arcane = new Serie("Arcane", 2021);
         arcane.setDuracaoMinutos(45);
         arcane.setDuracaoPorEpisodio(45);
         arcane.setIncuidoNoPlano(Alternativa.SIM);
@@ -82,10 +71,7 @@ public class Principal {
 
         System.out.println();
 
-        Serie house = new Serie();
-        house.setTipo("Série");
-        house.setNome("Dr. House");
-        house.setAnoLancamento(2004);
+        Serie house = new Serie("Dr. House", 2004);
         house.setDuracaoPorEpisodio(43);
         house.setIncuidoNoPlano(Alternativa.SIM);
         house.setTemporadas(8);
@@ -125,6 +111,9 @@ public class Principal {
         listaFilmes.add(spaceChimps);
         System.out.println("Tamanho da lista: " + listaFilmes.size());
         System.out.println("Primeiro filme: " + listaFilmes.get(0).getNome());
+        System.out.println(listaFilmes.get(0).toString());
+
+
 
     }
 

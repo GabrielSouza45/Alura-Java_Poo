@@ -2,20 +2,24 @@ package br.com.alura.screenmatch.model;
 
 import br.com.alura.screenmatch.enums.Alternativa;
 
-public class Titulo {
+import java.text.Format;
+
+public class Titulo implements Comparable<Titulo>{
 
     private String tipo;
-    private String nome;
-    private int anoLancamento;
+    private final String nome;
+    private final int anoLancamento;
     private int duracaoMinutos;
     private Alternativa incuidoNoPlano;
     private double somaAvaliacoes;
     private int totalAvaliacoes;
 
-    public Titulo(){
 
+    public Titulo(String tipo, String nome, int anoLancamento){
+        this.tipo = tipo;
+        this.nome = nome;
+        this.anoLancamento = anoLancamento;
     }
-
 
     public void exibeFichaTecnica(){
         System.out.println("Tipo: " + this.tipo);
@@ -36,21 +40,17 @@ public class Titulo {
         return avalia;
     }
 
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
+    }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public int getAnoLancamento() {
         return anoLancamento;
-    }
-
-    public void setAnoLancamento(int anoLancamento) {
-        this.anoLancamento = anoLancamento;
     }
 
     public int getDuracaoMinutos() {
@@ -79,5 +79,10 @@ public class Titulo {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return String.format( "%s: %s (%s) \n", this.tipo, this.nome, this.anoLancamento);
     }
 }
