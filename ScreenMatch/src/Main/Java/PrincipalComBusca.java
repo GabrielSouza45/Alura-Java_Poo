@@ -1,5 +1,11 @@
 package Main.Java;
 
+import br.com.alura.screenmatch.model.Titulo;
+import br.com.alura.screenmatch.model.TituloOMDb;
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -16,23 +22,31 @@ public class PrincipalComBusca {
         String apiKey = "67855098";
 
         System.out.println("Digite o nome do filme: ");
-        String busca = sc.next();
+        String busca = sc.nextLine();
 
+        busca = busca.replaceAll("\s", "+");
 
-        String result = busca.replace(" ", "");
-        System.out.println(result);
-//        String endereco = "https://www.omdbapi.com/?t="+busca+"&apikey="+apiKey;
-//
-//        String buscar = "Spider+man+across+the+spider+verse";
-//
-//
-//        HttpClient client = HttpClient.newHttpClient();
-//        HttpRequest request = HttpRequest.newBuilder()
-//                .uri(URI.create(endereco))
-//                .build();
-//        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-//
-//        System.out.println(response.body());
+        String endereco = "https://www.omdbapi.com/?t="+busca+"&apikey="+apiKey;
+
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(endereco))
+                .build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        String json = response.body();
+        System.out.println(json);
+
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .create();
+        TituloOMDb tituloOmdb = gson.fromJson(json, TituloOMDb.class);
+        System.out.println("TituloOmdb: \n" + tituloOmdb);
+
+        System.out.println();
+
+        Titulo titulo = new Titulo(tituloOmdb);
+        System.out.println("Titulo: \n" + titulo);
     }
 
 }

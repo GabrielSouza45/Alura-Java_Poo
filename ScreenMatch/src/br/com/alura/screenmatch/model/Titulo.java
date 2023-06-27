@@ -1,13 +1,16 @@
 package br.com.alura.screenmatch.model;
 
 import br.com.alura.screenmatch.enums.Alternativa;
+import com.google.gson.annotations.SerializedName;
 
 import java.text.Format;
 
 public class Titulo implements Comparable<Titulo>{
 
     private String tipo;
+    @SerializedName("Title")
     private final String nome;
+    @SerializedName("Year")
     private final int anoLancamento;
     private int duracaoMinutos;
     private Alternativa incuidoNoPlano;
@@ -19,6 +22,12 @@ public class Titulo implements Comparable<Titulo>{
         this.tipo = tipo;
         this.nome = nome;
         this.anoLancamento = anoLancamento;
+    }
+
+    public Titulo(TituloOMDb tituloOmdb) {
+        this.nome = tituloOmdb.title();
+        this.anoLancamento = Integer.valueOf(tituloOmdb.year());
+        this.duracaoMinutos = Integer.valueOf(tituloOmdb.runtime().substring(0, 2));
     }
 
     public void exibeFichaTecnica(){
@@ -83,6 +92,6 @@ public class Titulo implements Comparable<Titulo>{
 
     @Override
     public String toString() {
-        return String.format( "%s: %s (%s) \n", this.tipo, this.nome, this.anoLancamento);
+        return String.format( "%s: %s (%s), Duração: %s \n", this.tipo, this.nome, this.anoLancamento, this.duracaoMinutos);
     }
 }
