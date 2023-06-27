@@ -1,5 +1,6 @@
 package Main.Java;
 
+import br.com.alura.screenmatch.excecao.ErroDeConversaoDeAnoException;
 import br.com.alura.screenmatch.model.Titulo;
 import br.com.alura.screenmatch.model.TituloOMDb;
 import com.google.gson.FieldNamingPolicy;
@@ -26,27 +27,40 @@ public class PrincipalComBusca {
 
         busca = busca.replaceAll("\s", "+");
 
-        String endereco = "https://www.omdbapi.com/?t="+busca+"&apikey="+apiKey;
+        String endereco = "https://www.omdbapi.com/?t=" + busca + "&apikey=" + apiKey;
 
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(endereco))
-                .build();
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        try {
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(endereco))
+                    .build();
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-        String json = response.body();
-        System.out.println(json);
+            String json = response.body();
+            System.out.println(json);
 
-        Gson gson = new GsonBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                .create();
-        TituloOMDb tituloOmdb = gson.fromJson(json, TituloOMDb.class);
-        System.out.println("TituloOmdb: \n" + tituloOmdb);
+            Gson gson = new GsonBuilder()
+                    .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                    .create();
+            TituloOMDb tituloOmdb = gson.fromJson(json, TituloOMDb.class);
+            System.out.println("TituloOmdb: \n" + tituloOmdb);
 
-        System.out.println();
+            System.out.println();
 
-        Titulo titulo = new Titulo(tituloOmdb);
-        System.out.println("Titulo: \n" + titulo);
+            Titulo titulo = new Titulo(tituloOmdb);
+            System.out.println("Titulo: \n" + titulo);
+
+        } catch (NumberFormatException ex) {
+            System.out.println("Ocorreu um erro");
+            System.out.println(ex.getMessage());
+        } catch (IllegalArgumentException ex){
+            System.out.println("Erro de argumento");
+            System.out.println(ex.getMessage());
+        } catch (ErroDeConversaoDeAnoException e){
+            System.out.println(e.getMensagem());
+        }
+
+
     }
 
 }
