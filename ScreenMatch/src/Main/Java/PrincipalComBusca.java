@@ -7,6 +7,9 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -49,6 +52,32 @@ public class PrincipalComBusca {
 
             Titulo titulo = new Titulo(tituloOmdb);
             System.out.println("Titulo: \n" + titulo);
+
+            FileWriter writer = new FileWriter("Filme.txt");
+            writer.write(titulo.toString());
+            writer.close();
+
+            File file = new File("C:\\Users\\Gabriel Freitas\\Desktop\\trabaio\\ScreenMatch\\ScreenMatch\\Filme.txt");
+
+            FileReader reader = new FileReader(file);
+
+            int data = reader.read();
+            while (data != -1) {
+                System.out.print((char) data);
+                data = reader.read();
+            }
+            reader.close();
+
+
+
+
+
+
+
+
+
+
+
 
         } catch (NumberFormatException ex) {
             System.out.println("Ocorreu um erro");
