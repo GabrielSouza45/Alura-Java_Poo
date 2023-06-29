@@ -1,1 +1,44 @@
-null: Matrix (1993), Duração: 60 
+[
+  {
+    "Nome": "Star Wars: Episode IV - A New Hope",
+    "AnoLancamento": 1977,
+    "DuracaoMinutos": 12,
+    "SomaAvaliacoes": 0.0,
+    "TotalAvaliacoes": 0
+  },
+  {
+    "Nome": "B",
+    "AnoLancamento": 2015,
+    "DuracaoMinutos": 80,
+    "SomaAvaliacoes": 0.0,
+    "TotalAvaliacoes": 0
+  },
+  {
+    "Nome": "D",
+    "AnoLancamento": 2005,
+    "DuracaoMinutos": 10,
+    "SomaAvaliacoes": 0.0,
+    "TotalAvaliacoes": 0
+  },
+  {
+    "Nome": "WALL·E",
+    "AnoLancamento": 2008,
+    "DuracaoMinutos": 98,
+    "SomaAvaliacoes": 0.0,
+    "TotalAvaliacoes": 0
+  },
+  {
+    "Nome": "F",
+    "AnoLancamento": 2010,
+    "DuracaoMinutos": 79,
+    "SomaAvaliacoes": 0.0,
+    "TotalAvaliacoes": 0
+  },
+  {
+    "Nome": "Matrix",
+    "AnoLancamento": 1993,
+    "DuracaoMinutos": 60,
+    "SomaAvaliacoes": 0.0,
+    "TotalAvaliacoes": 0
+  }
+]
