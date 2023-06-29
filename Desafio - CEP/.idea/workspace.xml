@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aebf75fd-91ad-4753-8ce9-394333eb9261" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/ScreenMatch.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dependencias.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Desafio - CEP.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/br/com/alura/Main/BuscaPorRua.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/br/com/alura/Main/Principal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/br/com/alura/Model/Endereco.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ScreenMatch/Filme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../ScreenMatch/Filme.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ScreenMatch/out/production/ScreenMatch/Main/Java/PrincipalComBusca.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ScreenMatch/out/production/ScreenMatch/Main/Java/PrincipalComBusca.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ScreenMatch/src/Main/Java/PrincipalComBusca.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ScreenMatch/src/Main/Java/PrincipalComBusca.java" afterDir="false" />
@@ -52,7 +41,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Gabriel Freitas/Desktop/Programação/trabaio/ScreenMatch/Dependencias",
+    "last_opened_file_path": "C:/Users/Gabriel Freitas/Desktop/Turn2C/conexao-backend-v6",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
