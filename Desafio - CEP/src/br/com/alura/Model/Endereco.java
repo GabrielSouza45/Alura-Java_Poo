@@ -17,15 +17,6 @@ public class Endereco {
 
     }
 
-    public Endereco(String uf, String cidade, String rua){
-        if (uf == null || cidade == null || rua == null){
-            throw new RuntimeException("Estado, Cidade e Rua são obrigatórios.");
-        }
-
-        this.uf = uf;
-        this.cidade = cidade;
-        this.rua = rua;
-    }
 
     @Override
     public String toString() {

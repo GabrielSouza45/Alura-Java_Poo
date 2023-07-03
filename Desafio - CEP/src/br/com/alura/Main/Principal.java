@@ -2,6 +2,7 @@ package br.com.alura.Main;
 
 import br.com.alura.Model.Endereco;
 import br.com.alura.Model.EnderecoArray;
+import br.com.alura.Model.GerarArquivos;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -49,6 +50,9 @@ public class Principal {
 
             System.out.println(endereco);
 
+            GerarArquivos gerarArquivos = new GerarArquivos();
+            gerarArquivos.salvarJson(endereco);
+
             System.out.println("Fim da execução");
             System.exit(0);
         }
@@ -61,6 +65,9 @@ public class Principal {
         endereco = buscaCep(cep, tipoArquivo, numero, complemento);
 
         System.out.println(endereco.toString());
+
+        GerarArquivos gerarArquivos = new GerarArquivos();
+        gerarArquivos.salvarJson(endereco);
 
         System.out.println("Fim da execução");
 
