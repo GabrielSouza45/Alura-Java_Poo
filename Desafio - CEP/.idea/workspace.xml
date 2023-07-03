@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aebf75fd-91ad-4753-8ce9-394333eb9261" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/br/com/alura/Model/EnderecoArray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ScreenMatch/Filme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../ScreenMatch/Filme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ScreenMatch/out/production/ScreenMatch/Main/Java/PrincipalComBusca.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ScreenMatch/out/production/ScreenMatch/Main/Java/PrincipalComBusca.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ScreenMatch/src/Main/Java/PrincipalComBusca.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ScreenMatch/src/Main/Java/PrincipalComBusca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ScreenMatch/src/br/com/alura/screenmatch/model/TituloOMDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ScreenMatch/src/br/com/alura/screenmatch/model/TituloOMDb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/alura/Main/BuscaPorRua.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/alura/Main/BuscaPorRua.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/alura/Main/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/alura/Main/Principal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +39,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Gabriel Freitas/Desktop/Turn2C/conexao-backend-v6",
+    "last_opened_file_path": "C:/Users/Gabriel Freitas/Desktop/Programação/trabaio/ScreenMatch/Desafio - CEP",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -91,26 +89,5 @@
       <updated>1688046757453</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/br/com/alura/Main/Principal.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/br/com/alura/Main/Principal.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/br/com/alura/Main/Principal.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

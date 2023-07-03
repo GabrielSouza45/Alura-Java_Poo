@@ -1,6 +1,7 @@
 package br.com.alura.Main;
 
 import br.com.alura.Model.Endereco;
+import br.com.alura.Model.EnderecoArray;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -17,27 +18,40 @@ public class Principal {
 
         String tipoArquivo = "json";
 
+        System.out.println("Digite o número da sua casa: ");
+        String numero = sc.nextLine();
+
+        System.out.println("Digite o complemento: ");
+        String complemento = sc.nextLine();
+
         System.out.println("Digite seu cep:\nOu digite 'Não sei meu CEP'");
         String cep = sc.nextLine();
 
+        EnderecoArray[] enderecoArrays = null;
         Endereco endereco = null;
         if (cep.equalsIgnoreCase("nao sei meu cep")) {
             BuscaPorRua buscaPorRua = new BuscaPorRua();
-            endereco = buscaPorRua.buscaCep();
+            enderecoArrays = buscaPorRua.buscaCep();
         }
 
-        if (endereco != null) {
+        if (enderecoArrays != null) {
+
+            int length = enderecoArrays.length;
+            if (length > 1){
+                endereco = voltaEndereco(enderecoArrays);
+            }
+            else {
+                endereco = enderecoArrays[0];
+            }
+
+            endereco.setNumero(numero);
+            endereco.setComplemento(complemento);
+
             System.out.println(endereco);
 
             System.out.println("Fim da execução");
             System.exit(0);
         }
-
-        System.out.println("Digite o número da sua casa.");
-        String numero = sc.nextLine();
-
-        System.out.println("Digite o complemento: ");
-        String complemento = sc.nextLine();
 
         cep = cep.replaceAll("[^\\d]", "");
         if (cep.length() > 8) {
@@ -52,7 +66,6 @@ public class Principal {
 
     }
 
-
     public static Endereco buscaCep(String cep, String tipoArquivo, String numero, String complemento) throws IOException, InterruptedException {
 
         Gson gson = new Gson();
@@ -64,13 +77,34 @@ public class Principal {
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
         String json = response.body();
-        System.out.println(json);
+//        System.out.println(json);
 
         Endereco endereco = gson.fromJson(json, Endereco.class);
         endereco.setNumero(numero);
         endereco.setComplemento(complemento);
 
         return endereco;
+
+    }
+
+    public static Endereco voltaEndereco(EnderecoArray[] enderecoArrays){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Por favor selecione seu endereço digitando o número dele: ");
+        int n =1;
+        for (Endereco endereco : enderecoArrays){
+            System.out.println(
+                    n + ": \n" + endereco.toString()
+            );
+            n++;
+        }
+        int escolha = sc.nextInt();
+        if (escolha > enderecoArrays.length){
+            System.out.println("Endereço para este número não existe.");
+
+            System.out.println("Fim da execução.");
+            System.exit(0);
+        }
+        return enderecoArrays[escolha -1];
 
     }
 
