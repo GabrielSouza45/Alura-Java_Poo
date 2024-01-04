@@ -5,6 +5,7 @@ import br.com.alura.Model.EnderecoArray;
 import br.com.alura.Model.GerarArquivos;
 import com.google.gson.Gson;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -17,14 +18,28 @@ public class Principal {
 
         Scanner sc = new Scanner(System.in);
 
+        JOptionPane.showMessageDialog(
+                null,
+                "Olá, este é um projeto criado para aprimorar meus conhecimento em consumo de APIs.",
+                "Hello World!",
+                JOptionPane.INFORMATION_MESSAGE
+        );
+
         String tipoArquivo = "json";
 
-        System.out.println("Digite o número da sua casa: ");
-        String numero = sc.nextLine();
+        String numero = JOptionPane.showInputDialog(
+                null,
+                "Digite o número da casa: ",
+                "Número da casa"
+        );
 
-        System.out.println("Digite o complemento: ");
-        String complemento = sc.nextLine();
+        String complemento = JOptionPane.showInputDialog(
+                null,
+                "Digite o complemento: ",
+                "Complemento"
+        );
 
+        String[] opcoes = {"Continuar", "Não sei meu CEP", "Cancelar"};
         System.out.println("Digite seu cep:\nOu digite 'Não sei meu CEP'");
         String cep = sc.nextLine();
 
